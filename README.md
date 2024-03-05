@@ -1,12 +1,11 @@
 Hi there i'm using Github 👋
 
-Believe process more than result
-
-- 🌱 I’m currently learning UI/UX
-- 💬 Ask me about GenRe
-- 📫 How to reach me: @azmi__06
-- 😄 Pronouns: He/Him
-- ⚡ Fun fact: Manchester United Fans
+<b>Believe process more than result</b>
+🌱 I’m currently learning UI/UX
+💬 Ask me about GenRe
+📫 How to reach me: @azmi__06
+😄 Pronouns: He/Him
+⚡ Fun fact: Manchester United Fans
 <!--
 **Naufal1Azmi/Naufal1Azmi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
