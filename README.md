@@ -1,6 +1,7 @@
 Hi there i'm using Github 👋
 
 <b>Believe process more than result</b>
+
 -🌱 I’m currently learning UI/UX
 -💬 Ask me about GenRe
 -📫 How to reach me: @azmi__06
