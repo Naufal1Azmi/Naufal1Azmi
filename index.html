@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naufal Berasumsi</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css">
+  </head>
+  <body>
+    <header>
+        <div class="hero">
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              <img src="image/img1.png" alt="profil" class="user-pic" onclick="toggleMenu()" />
+              <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                  <div class="user-info">
+                    <img src="image/img1.png" alt="profil" class="user-pic" />
+                    <h3>Naufal Azmi</h3>
+                  </div>
+                  <hr />
+                  <a href="#" class="sub-menu-link">
+                    <i data-feather="user" class="icon"></i>
+                    <p>On progress</p>
+                    <span> > </span>
+                  </a>
+                  <a href="#" class="sub-menu-link">
+                    <i data-feather="settings" class="icon"></i>
+                    <p>On Progress</p>
+                    <span> > </span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+      
+          <script>
+            let subMenu = document.getElementById("subMenu");
+            function toggleMenu() {
+              subMenu.classList.toggle("open-menu");
+            }
+          </script>
+    </header>
+
+<section class="home">
+    <div class="home-text">
+      <h2>Wellcome I'm <b style="color: rgb(93, 28, 12);;">Naufal</b> <i class="ph-bold ph-hand-waving"></i></h2>
+      <h3>Manchester United Fans</h3>
+      <p>Kalah sudah biasa,tetap tegakkan kepala walau terbantai.</p>
+    </div>
+    <div class="home-img">
+      <img src="image/profil-image.png" style="width: 800px;" />
+    </div>
+  </section>
+  </body>
+  <footer class="footer"><br>
+    <h2><i>"Sebaik-baik manusia adalah yang bermanfaat bagi sesama"</i></h2>
+  </footer>
+</html>
