@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas ReGex - Naufal Azmi</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <div class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 min-h-screen flex items-center justify-center px-8 py-6">
+        <div class="bg-slate-50 w-96 h-fit rounded-xl shadow-md p-4">
+            <div>
+            <h1 class="font-serif text-red-950 px-4 pt-4 flex text-center justify-center">Implementasi Regular Expression bersama</h1>
+            <h1 class="transition ease-in-out delay-150 rounded-full shadow-md bg-red-950 text-white hover:-translate-y-1 hover:scale-110 hover:bg-red-400 duration-300 flex items-center justify-center m-4"><a href="../index.html">Naufal Berasumsi</a></h1>
+            </div>
+            <form>
+            <div class="sm:col-span-4 mt-4 px-3">
+                <label for="email" class="font-medium  text-gray-900">Alamat Email</label>
+                <div class="mt-1">
+                <input id="email" name="email" type="email" autocomplete="email" placeholder=" Ketik disini" pattern="^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$" class="block w-full  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                <p id="invalid-email" class=" text-red-600 font-thin hidden">Hanya Gmail dan Yahoo (berakhir gmail.com/yahoo.com)</p>
+                <p id="valid-email" class=" text-green-600 font-thin hidden">Email sudah sesuai</p>
+                </div>
+            </div>
+            
+            <div class="sm:col-span-4 mt-4 px-3">
+                <label for="namdep" class="font-medium text-gray-900">Nama depan</label>
+                <div class="mt-1">
+                    <input id="namdep" name="namdep" type="text" autocomplete="namdep" pattern="^[A-Z][a-z]*$" placeholder="Ketik disini" class="block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                    <p id="invalid-namdep" class="text-red-600 font-thin hidden">Hanya 1 kata dan diawali huruf besar</p>
+                    <p id="valid-namdep" class=" text-green-600 font-thin hidden">Nama depan sudah sesuai</p>
+                </div>
+            </div>
+
+            <div class="sm:col-span-4 mt-4 px-3">
+                <label for="password" class="font-medium  text-gray-900">Kata Sandi</label>
+                <div class="mt-1">
+                <input id="password" name="password" type="password" autocomplete="password" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,12}" placeholder=" Ketik disini" class="block w-full  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                <p id="invalid-password" class="text-red-600 font-thin hidden">Panjang 8-12 karakter,mengandung huruf kapital, huruf kecil dan angka</p>
+                <p id="valid-password" class=" text-green-600 font-thin hidden">Kata sandi sudah sesuai</p>
+                </div>
+            </div>
+
+            <div class="sm:col-span-4 mt-4 px-3">
+                <label for="nompol" class="font-medium  text-gray-900">Nomor Polisi (Sumatera Utara)</label>
+                <div class="mt-1">
+                <input id="nompol" name="nompol" type="text" autocomplete="nompol" pattern="^BK[1-9][0-9]{0,3}[A-Z]{1,3}$" placeholder=" Ketik disini" class="block w-full  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                <p id="invalid-nompol" class="text-red-600 font-thin hidden">Format wajib -> BK(angka)(huruf) dan semua huruf kapital</p>
+                <p id="valid-nompol" class=" text-green-600 font-thin hidden">Nomor polisi sudah sesuai</p>
+                </div>
+            </div>
+
+            <div class="sm:col-span-4 mt-4 px-3 pb-6">
+                <label for="nomor" class="font-medium  text-gray-900">Nomor Telepon (Indonesia)</label>
+                <div class="mt-1">
+                <input id="nomor" name="nomor" type="tel" autocomplete="nomor" pattern="^[0][0-9]{9,11}$" placeholder=" Ketik disini" class="block w-full  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                <p id="invalid-nomor" class="text-red-600 font-thin hidden">Terdiri dari 10-12 Karakter dan diawali angka 0</p>
+                <p id="valid-nomor" class=" text-green-600 font-thin hidden">Nomor telepon sudah sesuai</p>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    const emailField = document.querySelector("[name=email]");
+    const invalidEmailMessage = document.getElementById("invalid-email");
+    const validEmailMessage = document.getElementById("valid-email");
+
+    const namdepField = document.querySelector("[name=namdep]");
+    const invalidNamaDepanMessage = document.getElementById("invalid-namdep");
+    const validNamaDepanMessage = document.getElementById("valid-namdep");
+
+    const passwordField = document.querySelector("[name=password]");
+    const invalidKataSandiMessage = document.getElementById("invalid-password");
+    const validKataSandiMessage = document.getElementById("valid-password");
+
+    const nompolField = document.querySelector("[name=nompol]");
+    const invalidNomorPolisiMessage = document.getElementById("invalid-nompol");
+    const validNomorPolisiMessage = document.getElementById("valid-nompol");
+
+    const nomorField = document.querySelector("[name=nomor]");
+    const invalidNomorTelponMessage = document.getElementById("invalid-nomor");
+    const validNomorTelponMessage = document.getElementById("valid-nomor");
+
+    function validateEmail() {
+    if (!emailField.validity.valid || emailField.value === "") {
+        invalidEmailMessage.style.display = "block";
+        validEmailMessage.style.display = "none";
+    } else {
+        invalidEmailMessage.style.display = "none";
+        validEmailMessage.style.display = "block";
+    }
+}
+
+function validateNamdep() {
+    if (!namdepField.validity.valid || namdepField.value === "") {
+        invalidNamaDepanMessage.style.display = "block";
+        validNamaDepanMessage.style.display = "none";
+    } else {
+        invalidNamaDepanMessage.style.display = "none";
+        validNamaDepanMessage.style.display = "block";
+    }
+}
+
+function validatePassword() {
+    if (!passwordField.validity.valid || passwordField.value === "") {
+        invalidKataSandiMessage.style.display = "block";
+        validKataSandiMessage.style.display = "none";
+    } else {
+        invalidKataSandiMessage.style.display = "none";
+        validKataSandiMessage.style.display = "block";
+    }
+}
+
+function validateNompol() {
+    if (!nompolField.validity.valid || nompolField.value === "") {
+        invalidNomorPolisiMessage.style.display = "block";
+        validNomorPolisiMessage.style.display = "none";
+    } else {
+        invalidNomorPolisiMessage.style.display = "none";
+        validNomorPolisiMessage.style.display = "block";
+    }
+}
+
+function validateNomor() {
+    if (!nomorField.validity.valid || nomorField.value === "") {
+        invalidNomorTelponMessage.style.display = "block";
+        validNomorTelponMessage.style.display = "none";
+    } else {
+        invalidNomorTelponMessage.style.display = "none";
+        validNomorTelponMessage.style.display = "block";
+    }
+}
+
+emailField.addEventListener("input", validateEmail);
+namdepField.addEventListener("input", validateNamdep);
+passwordField.addEventListener("input", validatePassword);
+nompolField.addEventListener("input", validateNompol);
+nomorField.addEventListener("input", validateNomor);
+
+</script>
+</html>
