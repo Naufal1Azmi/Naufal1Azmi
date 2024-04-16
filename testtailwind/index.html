@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="lg:hidden place-content-center">
-            <img id="burgericon" class="cursor-pointer size-10" src="./image/ikon-burger.png" alt="ikon-burger">
-            <div id="bgburger" class="bg-black bg-opacity-50 z-10 w-full h-full  fixed hidden"></div>
-            <div id="dialog" class="ease-in-out w-full bg-white z-20 fixed top-0 right-0">
+            <img id="openMenu" class="cursor-pointer size-10" src="./image/ikon-burger.png" alt="ikon-burger">
+            <div id="menu" class="bg-black bg-opacity-50 z-10 w-full h-full  fixed hidden"></div>
+            <div id="overlay" class="ease-in-out w-full bg-white z-20 fixed top-0 right-0">
                 <div class="gap-6 grid py-6 px-6">
-                    <span id="eks" class=" flex justify-end cursor-pointer"><img class=" size-6" src="./image/close-icon.png" alt="close-icon"></span>
+                    <span id="closeMenu" class=" flex justify-end cursor-pointer"><img class=" size-6" src="./image/close-icon.png" alt="close-icon"></span>
                     <a class="text-gray-600 text-sm font-thin">Program Kampus Merdeka</a>
                     <div class="flex justify-between cursor-pointer">
                         <a class="font-medium text-black">
@@ -210,25 +210,25 @@
 </footer>
 
 <script>
-    const burgericon = document.getElementById('burgericon');
-    const bgburger = document.getElementById('bgburger');
-    const eks = document.getElementById('eks');
-    const dialog = document.getElementById('dialog');
+const openMenuBtn = document.getElementById('openMenu');
+const closeMenuBtn = document.getElementById('closeMenu');
+const menu = document.getElementById('menu');
+const overlay = document.getElementById('overlay');
 
-        burgericon.addEventListener('click', () => {
-        dialog.classList.remove('-translate-y-full');
-        bgburger.classList.remove('hidden');
-    });
+openMenuBtn.addEventListener('click', () => {
+    menu.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+});
 
-        bgburger.addEventListener('click', () => {
-        dialog.classList.add('-translate-y-full');
-        bgburger.classList.add('hidden');
-    });
+closeMenuBtn.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
 
-        eks.addEventListener('click', () => {
-        dialog.classList.add('-translate-y-full');
-        bgburger.classList.add('hidden');
-    });
+overlay.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
 
 </script>
 </html>
