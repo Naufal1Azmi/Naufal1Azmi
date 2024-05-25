@@ -21,10 +21,10 @@ class PostController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param 
+     * @return 
      */
     public function store(Request $request)
     {
@@ -39,7 +39,7 @@ class PostController extends Controller
                 'content' => $request->content,
             ]);
 
-            return response()->json($post); // Return the post as JSON
+            return response()->json($post); // kembali ke laman post lewat JSON
         } catch (ValidationException $e) {
             return response()->json(['errors' => $e->validator->errors()], 422);
         }
